@@ -1,0 +1,136 @@
+html, body {
+    background:#ebebeb;
+    font:normal 13px Arial,sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family:"Trebuchet MS",Arial,sans-serif;
+    font-variant:small-caps;
+}
+.wrapper {
+    background:#fff;
+    margin:0 auto;
+    padding:0 25px;
+    width:900px;
+}
+
+.main-header {
+    background:#f7f7f7 url(../images/logo.png) 25px 50% no-repeat;
+    margin:0 -25px;
+    min-height:75px;
+    padding:15px 25px 20px;
+    text-align:center;
+}
+.main-header h1 {
+    font-size:3.5em;
+    letter-spacing:0.3em;
+    margin:0;
+}
+.main-header h2 {
+    color:#aaa;
+    font-size:1.25em;
+    margin:0;
+}
+
+.main-footer {
+    background:#f7f7f7;
+    margin:0 -25px;
+    padding:5px 25px;
+}
+.copyright {
+    color:#aaa;
+    font-size:11px;
+    text-align:right;
+}
+
+.product-section {
+    border:3px double #ebebeb;
+    margin:25px 0;
+}
+.product-section header {
+    text-align:center;
+}
+.product-block {
+    margin:0 auto;
+    width:750px;
+}
+.product-list {
+    padding:0;
+    text-align:center;
+}
+.product-list > li {
+    display:inline-block;
+    list-style:none;
+    margin:0 7px 10px 0;
+}
+.product-list > li a {
+    background:#f7f7f7;
+    -webkit-border-radius:7px;
+    -moz-border-radius:7px;
+    border-radius:7px;
+    color:#000;
+    display:block;
+    padding:20px 30px;
+    text-decoration:underline;
+    width:140px;
+}
+.product-list > li a:hover {
+    background-color:#ebebeb;
+    text-decoration:none;
+}
+.product-list > li a:before {
+    background-image:url(../images/proj-icons.png);
+    background-repeat:no-repeat;
+    content:"";
+    display:block;
+    height:50px;
+    margin:0 auto 10px;
+    width:50px;
+}
+.proj-spin-digits a:before {
+    background-position:0 0;
+}
+.proj-spin-digits a:hover:before {
+    background-position:0 -50px;
+}
+.proj-floatingscroll a:before {
+    background-position:-50px 0;
+}
+.proj-floatingscroll a:hover:before {
+    background-position:-50px -50px;
+}
+.proj-overplaceholder a:before {
+    background-position:-100px 0;
+}
+.proj-overplaceholder a:hover:before {
+    background-position:-100px -50px;
+}
+.proj-extratabs a:before {
+    background-position:-150px 0;
+}
+.proj-extratabs a:hover:before {
+    background-position:-150px -50px;
+}
+.proj-fix-ie-css-limit a:before {
+    background-position:-200px 0;
+}
+.proj-fix-ie-css-limit a:hover:before {
+    background-position:-200px -50px;
+}
+.proj-fx-pie-charts a:before {
+    background-position:-250px 0;
+}
+.proj-fx-pie-charts a:hover:before {
+    background-position:-250px -50px;
+}
+.proj-l-systems a:before {
+    background-position:-300px 0;
+}
+.proj-l-systems a:hover:before {
+    background-position:-300px -50px;
+}
+.proj-slica a:before {
+    background-position:-350px 0;
+}
+.proj-slica a:hover:before {
+    background-position:-350px -50px;
+}
