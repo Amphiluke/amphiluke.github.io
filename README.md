@@ -1,4 +1,4 @@
 amphiluke.github.io
 ===================
 
-Live demos on JavaScript plugins and modules by Amphiluke
+Live demos for JavaScript plugins and modules by Amphiluke
