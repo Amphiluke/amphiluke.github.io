@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{{ page.title }}</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="{{ site.url }}/styles/normalize.css"/>
+    <link rel="stylesheet" href="{{ site.url }}/styles/main.css"/>
+</head>
+<body>
+
+<div class="wrapper">
+
+    {{ content }}
+
+    {% include footer.html %}
+
+</div>
+
+</body>
+</html>
