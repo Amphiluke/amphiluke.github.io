@@ -1,0 +1,6 @@
+{% if page.footerscripts %}
+    {% assign paths = page.footerscripts | split: ',' %}
+    {% for path in paths %}
+        <script src="{{ path }}"></script>
+    {% endfor %}
+{% endif %}

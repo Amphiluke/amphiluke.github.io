@@ -1,0 +1,21 @@
+<meta charset="UTF-8"/>
+<title>{{ page.title }}</title>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="/styles/normalize.css"/>
+<link rel="stylesheet" href="/styles/main.css"/>
+
+{% if page.headstyles %}
+    {% assign paths = page.headstyles | split: ',' %}
+    {% for path in paths %}
+        <link rel="stylesheet" href="{{ path }}"/>
+    {% endfor %}
+{% endif %}
+
+{% if page.headscripts %}
+    {% assign paths = page.headscripts | split: ',' %}
+    {% for path in paths %}
+        <script src="{{ path }}"></script>
+    {% endfor %}
+{% endif %}

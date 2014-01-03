@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include head.html %}
+</head>
+<body class="inner-page">
+
+<div class="wrapper">
+
+    <header class="main-header">
+        <hgroup>
+            <h1>{{ page.title }}</h1>
+            <h2>Live demos for JavaScript plugins &amp; modules by Amphiluke</h2>
+        </hgroup>
+    </header>
+
+    {{ content }}
+
+    {% include footer.html %}
+
+</div>
+
+{% include scripts.html %}
+
+</body>
+</html>
