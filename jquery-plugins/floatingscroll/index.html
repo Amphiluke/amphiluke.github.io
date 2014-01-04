@@ -1,0 +1,862 @@
+---
+layout: inner
+title: floatingscroll
+headstyles: /styles/syntax.css,/jquery-plugins/floatingscroll/jquery.floatingscroll.css,/jquery-plugins/floatingscroll/floatingscroll-demo.css
+footerscripts: /jquery-plugins/floatingscroll/jquery.floatingscroll.min.js,/jquery-plugins/floatingscroll/floatingscroll-demo.js
+---
+
+<p>Below, you'll find some demos using <a href="https://github.com/Amphiluke/jquery-plugins/tree/master/src/floatingscroll"><strong>floatingscroll</strong></a>, a jQuery plugin which provides some lengthy containers on the page with a separate horizontal scroll bar, which does not vanish from sight when the entire page is scrolled.</p>
+
+<section>
+	<h2>Example #1: Labyrinth</h2>
+	<p>Try to draw the thread of Ariadne by exploring a labyrinth</p>
+
+	<details class="demo-src-block demo-src-hidden">
+		<summary data-alt-text="Hide source">Show source</summary>
+		<div class="demo-src">
+{% highlight javascript %}
+$(document).ready(function () {
+    $(".maze").attachScroll();
+});
+{% endhighlight %}
+		</div>
+	</details>
+
+	<p><span class="maze-clear">Clear</span></p>
+	<div class="maze">
+		<canvas id="mazecnv" width="1840" height="1086">
+			<img src="maze.png" alt="Labyrinth" width="1840" height="1086" />
+		</canvas>
+	</div>
+</section>
+
+<section>
+	<h2>Example #2: Table with dynamic columns</h2>
+	<p>Show/hide table columns by checking/unchecking the checkboxes below</p>
+
+	<details class="demo-src-block demo-src-hidden">
+		<summary data-alt-text="Hide source">Show source</summary>
+		<div class="demo-src">
+{% highlight javascript %}
+$(document).ready(function () {
+    $(".whatwg").attachScroll();
+    $("body").on("click", "input[type='checkbox']", function () {
+        // ...skip irrelevant code toggling column visibility...
+        $(".whatwg").trigger("adjustScroll");
+    });
+});
+{% endhighlight %}
+		</div>
+	</details>
+
+	<form action="#" class="view-cols" autocomplete="off">
+		<ul>
+			<li><input type="checkbox" id="hidden-col" checked="checked" />
+				<label for="hidden-col">Hidden</label></li>
+			<li><input type="checkbox" id="text-col" checked="checked" />
+				<label for="text-col">Text, Search</label></li>
+			<li><input type="checkbox" id="url-col" checked="checked" />
+				<label for="url-col">URL, Telephone</label></li>
+			<li><input type="checkbox" id="email-col" checked="checked" />
+				<label for="email-col">E-mail</label></li>
+			<li><input type="checkbox" id="pass-col" checked="checked" />
+				<label for="pass-col">Password</label></li>
+			<li><input type="checkbox" id="date-col" checked="checked" />
+				<label for="date-col">Date and Time, Date, Month, Week, Time</label></li>
+			<li><input type="checkbox" id="local-col" checked="checked" />
+				<label for="local-col">Local Date and Time</label></li>
+		</ul>
+		<ul>
+			<li><input type="checkbox" id="number-col" checked="checked" />
+				<label for="number-col">Number</label></li>
+			<li><input type="checkbox" id="range-col" checked="checked" />
+				<label for="range-col">Range</label></li>
+			<li><input type="checkbox" id="color-col" checked="checked" />
+				<label for="color-col">Color</label></li>
+			<li><input type="checkbox" id="check-col" checked="checked" />
+				<label for="check-col">Checkbox, Radio Button</label></li>
+			<li><input type="checkbox" id="file-col" checked="checked" />
+				<label for="file-col">File Upload</label></li>
+			<li><input type="checkbox" id="submit-col" checked="checked" />
+				<label for="submit-col">Submit Button</label></li>
+			<li><input type="checkbox" id="img-col" checked="checked" />
+				<label for="img-col">Image Button</label></li>
+			<li><input type="checkbox" id="reset-col" checked="checked" />
+				<label for="reset-col">Reset Button, Button</label></li>
+		</ul>
+	</form>
+	<div class="whatwg">
+		<table id="input-type-attr-summary" class="applies" cellpadding="0" cellspacing="0">
+		<thead>
+		<tr class="row-1st">
+			<th class="cell-1st"></th>
+			<th>Hidden</th>
+			<th>Text, Search</th>
+			<th>URL, Telephone</th>
+			<th>E-mail</th>
+			<th>Password</th>
+			<th>Date and Time, Date, Month, Week, Time</th>
+			<th>Local Date and Time</th>
+			<th>Number</th>
+			<th>Range</th>
+			<th>Color</th>
+			<th>Checkbox, Radio Button</th>
+			<th>File Upload</th>
+			<th>Submit Button</th>
+			<th>Image Button</th>
+			<th class="cell-last">Reset Button, Button</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<th colspan="16" class="cell-1st cell-last">Content attributes</th>
+		</tr>
+		<tr>
+			<th class="cell-1st">accept</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">alt</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">autocomplete</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">checked</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">dirname</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">formaction</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">formenctype</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">formmethod</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">formnovalidate</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">formtarget</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">height</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">list</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">max</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">maxlength</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">min</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">multiple</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">pattern</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">placeholder</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">readonly</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">required</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">size</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">src</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">step</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">width</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		</tbody>
+		<tbody>
+		<tr>
+			<th scope="rowgroup" colspan="16" class="cell-1st cell-last">IDL attributes and methods</th>
+		</tr>
+		<tr>
+			<th class="cell-1st">checked</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">files</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr class="impl">
+			<th class="cell-1st">value</th>
+			<td class="yes">default</td>
+			<td class="yes">value</td>
+			<td class="yes">value</td>
+			<td class="yes">value</td>
+			<td class="yes">value</td>
+			<td class="yes">value</td>
+			<td class="yes">value</td>
+			<td class="yes">value</td>
+			<td class="yes">value</td>
+			<td class="yes">value</td>
+			<td class="yes">default/on</td>
+			<td class="yes">filename</td>
+			<td class="yes">default</td>
+			<td class="yes">default</td>
+			<td class="yes cell-last">default</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">valueAsDate</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">valueAsNumber</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">list</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">selectedOption</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes"> Yes†</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">select()</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">selectionStart</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">selectionEnd</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">selectionDirection</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">setSelectionRange()</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">stepDown()</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr>
+			<th class="cell-1st">stepUp()</th>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		</tbody>
+		<tbody>
+		<tr>
+			<th scope="rowgroup" colspan="16" class="cell-1st cell-last">Events</th>
+		</tr>
+		<tr>
+			<th class="cell-1st">input event</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		<tr class="row-last">
+			<th class="cell-1st">change event</th>
+			<td class="no">&ndash;</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="yes">Yes</td>
+			<td class="no">&ndash;</td>
+			<td class="no">&ndash;</td>
+			<td class="no cell-last">&ndash;</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+
+	<p class="footnote">The table above is copied from <a href="http://www.whatwg.org/specs/web-apps/current-work/#input-type-attr-summary" target="_blank">http://www.whatwg.org/</a></p>
+</section>
+
+<section>
+	<h2>Example #3: Just another example (simple game)</h2>
+	<p><b>Game controls:</b><br /><kbd>W, X, A, D</kbd> — move through the playing field;<br /><kbd>Ins/Del</kbd> — build/raze a fortress</p>
+
+	<div class="game-box"></div>
+</section>
+
+<h2>Links</h2>
+<ul>
+	<li><a href="https://github.com/Amphiluke/jquery-plugins/tree/master/src/floatingscroll#floatingscroll">Details &amp; API</a></li>
+	<li><a href="https://github.com/Amphiluke/jquery-plugins/tree/master/src/floatingscroll">Sources</a></li>
+</ul>
