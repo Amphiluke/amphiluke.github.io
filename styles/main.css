@@ -52,6 +52,22 @@ h1, h2, h3, h4, h5, h6 {
 	text-align:right;
 }
 
+.demo-src-block summary {
+	border-bottom:1px dashed;
+	cursor:pointer;
+	display:inline-block;
+	margin-bottom:0.5em;
+}
+.demo-src-block summary:hover {
+	border-bottom-color:transparent;
+}
+.demo-src-block.demo-src-hidden .demo-src {
+	display:none;
+}
+
+/**
+ * Front page styles
+ */
 .product-section {
 	border:3px double #ebebeb;
 	margin:25px 0;
