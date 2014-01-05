@@ -64,6 +64,20 @@ h1, h2, h3, h4, h5, h6 {
 .demo-src-block.demo-src-hidden .demo-src {
 	display:none;
 }
+.demo-src {
+	background:#f7f7f7;
+	border:1px solid #ebebeb;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	border-radius:3px;
+	padding:10px;
+}
+.demo-src .highlight {
+	background:none;
+}
+.demo-src pre {
+	margin:0;
+}
 
 /**
  * Front page styles

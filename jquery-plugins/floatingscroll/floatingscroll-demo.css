@@ -1,18 +1,3 @@
-.demo-src {
-	background:#f7f7f7;
-	border:1px solid #ebebeb;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	border-radius:3px;
-	padding:10px;
-}
-.demo-src .highlight {
-	background:none;
-}
-.demo-src pre {
-	margin:0;
-}
-
 .maze, .whatwg {
 	border:3px double #ebebeb;
 	overflow:auto;
