@@ -1,0 +1,15 @@
+.extratabs-demo {
+	border:3px double #ebebeb;
+	margin:1em auto 0;
+	padding:15px;
+	width:650px;
+}
+#tabs-switcher > label {
+	margin-right:15px;
+}
+#tabs {
+	margin-top:1em;
+}
+.ui-extratabs-scroll-btns {
+	padding:0.4em 0.5em 0.3em;
+}
