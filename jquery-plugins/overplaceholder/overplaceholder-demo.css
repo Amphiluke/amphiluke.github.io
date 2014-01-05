@@ -1,0 +1,68 @@
+.oph-form {
+	border:3px double #ebebeb;
+	margin-top:1em;
+	padding:0 15px;
+}
+.oph-form dd {
+	margin:0 0 0.5em;
+}
+.oph-form input[type="text"],
+.oph-form input[type="password"],
+.oph-form input[type="email"],
+.oph-form textarea,
+.oph-form select {
+	border:1px solid #aaa;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+	padding:2px 3px;
+	width:250px;
+}
+.oph-form input[type="text"]:focus,
+.oph-form input[type="password"]:focus,
+.oph-form input[type="email"]:focus,
+.oph-form textarea:focus,
+.oph-form select:focus {
+	border-color:#0086b3;
+}
+
+.loginlbl, .pswlbl, .emaillbl, .commentlbl, .homelbl, .filelbl, .captchalbl {
+	background:url(icons.png) 0 0 no-repeat;
+	margin-left:4px;
+	padding-left:20px;
+}
+.pswlbl {
+	background-position:0 -30px;
+}
+.emaillbl {
+	background-position:0 -58px;
+}
+.commentlbl {
+	background-position:0 -89px;
+	margin-left:75px;
+}
+.captchalbl {
+	background-position:0 -150px;
+}
+.fromlbl {
+	background:#fff;
+	height:1em;
+	margin-left:1px;
+}
+.required:after {
+	color:#c00;
+	content:"*";
+}
+
+label.error {
+	color:#e00;
+	font-weight:bold;
+	margin-left:10px;
+}
+label.error:before {
+	content:"× ";
+}
+.successmsg {
+	color:#0a0;
+	display:none;
+}

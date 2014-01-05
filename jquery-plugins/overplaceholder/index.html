@@ -1,0 +1,92 @@
+---
+layout: inner
+title: overplaceholder
+headstyles: /styles/syntax.css,/jquery-plugins/overplaceholder/jquery.overplaceholder.css,/jquery-plugins/overplaceholder/overplaceholder-demo.css
+footerscripts: /scripts/third-party/jquery.validate.min.js,/jquery-plugins/overplaceholder/jquery.overplaceholder.min.js,/jquery-plugins/overplaceholder/overplaceholder-demo.js
+---
+
+<p>Below, you'll find a demo using <a href="https://github.com/Amphiluke/jquery-plugins/tree/master/src/overplaceholder"><strong>overplaceholder</strong></a>, a jQuery plugin designed for cross-browser placeholder emulation in single- and multiline text fields, password fields and rarely selects and file inputs.</p>
+
+<details class="demo-src-block demo-src-hidden">
+	<summary data-alt-text="Hide source">Show source</summary>
+	<div class="demo-src">
+{% highlight javascript %}
+var ophOptions = {
+    emailfld: {
+        // apply some animation effects when placeholder appears/disappears
+        onshow: function () {
+            $(this).slideDown("slow");
+        },
+        onhide: function () {
+            $(this).fadeOut("fast");
+        }
+    },
+    fromfld: {
+        onshow: function () {
+            $(this).animate({left: "0"});
+        },
+        onhide: function () {
+            $(this).animate({left: ($("#" + this.htmlFor).outerWidth() + 2) + "px"});
+        },
+        // use em dash as an empty value triggering the placeholder to appear
+        reEmpty: /^\u2014$/
+    },
+    commentfld: {
+        // the comment field containing only space characters is considered unfilled
+        reEmpty: /\s/g
+    },
+    captchafld: {
+        onshow: function () {
+            $(this).animate({width: "toggle"});
+        }
+    }
+};
+
+$(".oph-label").overplaceholder(function () {
+    return ophOptions[this.htmlFor];
+});
+{% endhighlight %}
+	</div>
+</details>
+
+<form class="oph-form" action="#">
+	<dl>
+		<dt><label for="loginfld" class="oph-label loginlbl required">Login</label></dt>
+		<dd><input type="text" name="loginfld" id="loginfld" /></dd>
+		<dt><label for="pswfld" class="oph-label pswlbl required">Password</label></dt>
+		<dd><input type="password" name="pswfld" id="pswfld" /></dd>
+		<dt><label for="emailfld" class="oph-label emaillbl required">Email address</label></dt>
+		<dd><input type="email" name="emailfld" id="emailfld" /></dd>
+		<dt><label for="fromfld" class="oph-label fromlbl">Where do you come from?</label></dt>
+		<dd>
+			<select name="fromfld" id="fromfld">
+				<option value="non" selected="selected">—</option>
+				<option value="afr">Africa</option>
+				<option value="ant">Antarctica</option>
+				<option value="aus">Australia</option>
+				<option value="eur">Eurasia</option>
+				<option value="nam">North America</option>
+				<option value="sam">South America</option>
+			</select>
+		</dd>
+		<dt><label for="commentfld" class="oph-label commentlbl">Your comment</label></dt>
+		<dd><textarea name="commentfld" id="commentfld" cols="30" rows="10"></textarea></dd>
+		<dt><label for="captchafld" class="oph-label captchalbl required"><del><em>Secret</em></del> <ins><strong>code</strong></ins></label></dt>
+		<dd>
+			<input type="text" name="captchafld" id="captchafld" /><br />
+			<img src="captcha.png" alt="" width="200" height="45" />
+		</dd>
+		<dt></dt>
+		<dd>
+			<input type="reset" value="Reset" />
+			<input type="submit" value="Validate" />
+			<p class="successmsg">Validation has been passed successfully.</p>
+		</dd>
+	</dl>
+</form>
+
+<h2>Links</h2>
+<ul>
+	<li><a href="https://github.com/Amphiluke/jquery-plugins/tree/master/src/overplaceholder#overplaceholder">Details &amp; API</a></li>
+	<li><a href="https://github.com/Amphiluke/jquery-plugins/tree/master/src/overplaceholder">Sources</a></li>
+</ul>
