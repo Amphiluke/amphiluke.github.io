@@ -1,0 +1,68 @@
+---
+layout: inner
+title: fx-pie-charts
+headstyles: /styles/syntax.css,/pure-js/fx-pie-charts/fx-pie-charts-demo.css
+footerscripts: /pure-js/fx-pie-charts/fx-pie-charts.min.js,/pure-js/fx-pie-charts/fx-pie-charts-demo.js
+---
+
+<p>Below, you'll find some demos using <a href="https://github.com/Amphiluke/pure-js/tree/master/src/fx-pie-charts"><strong>fx-pie-charts</strong></a>, a JavaScript module for pie charts plotting.</p>
+
+<section>
+	<h2>Example #1: Using the module in jQuery environment</h2>
+
+	<details class="demo-src-block demo-src-hidden">
+		<summary data-alt-text="Hide source">Show source</summary>
+		<div class="demo-src">
+{% highlight javascript %}
+var colors = ["red", "green", "blue"];
+$("#chart-wrap-jquery").fxPieChart({
+    data: [12, 20, 15], // an attribute `data-fx-chart="12,20,15"` may be used instead
+    colors: colors,
+    handlers: {
+        click: function (event, pieIndex) {
+            $("#selected-pie").html(
+                "\x3Cspan style='color:" + colors[pieIndex] + "'\x3E" +
+                colors[pieIndex] + "\x3C/span\x3E pie is clicked"
+            );
+        }
+    }
+});
+{% endhighlight %}
+		</div>
+	</details>
+
+	<p id="selected-pie">Click some pie</p>
+	<div id="chart-wrap-jquery"></div>
+</section>
+
+<section>
+	<h2>Example #2: Using the module as a standalone script</h2>
+
+	<details class="demo-src-block demo-src-hidden">
+		<summary data-alt-text="Hide source">Show source</summary>
+		<div class="demo-src">
+{% highlight javascript %}
+var data = document.getElementById("chart-wrap-standalone").getAttribute("data-fx-chart").split(",");
+fxPieChart({
+    container: "chart-wrap-standalone", // target container's id is required in standalone mode
+    colors: ["red", "blue", "yellow", "maroon", "silver", "#0a0"],
+    handlers: {
+        mouseover: function (e, index) {
+            document.getElementById("hovered-pie-data").innerHTML = data[index];
+        }
+    }
+});
+{% endhighlight %}
+		</div>
+	</details>
+
+	<p id="hovered-pie-data">Hover the mouse pointer over some pie to see its value</p>
+	<div id="chart-wrap-standalone" data-fx-chart="20.1,30.5,11.8,40.3,55,8,66,11.5"></div>
+</section>
+
+
+<h2>Links</h2>
+<ul>
+	<li><a href="https://github.com/Amphiluke/pure-js/tree/master/src/fx-pie-charts#fx-pie-charts">Details &amp; API</a></li>
+	<li><a href="https://github.com/Amphiluke/pure-js/tree/master/src/fx-pie-charts">Sources</a></li>
+</ul>

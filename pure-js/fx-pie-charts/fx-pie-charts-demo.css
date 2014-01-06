@@ -1,0 +1,10 @@
+#chart-wrap-jquery, #chart-wrap-standalone {
+	background:#f7f7f7;
+	border:10px solid #f7f7f7;
+	-webkit-border-radius:10px;
+	-moz-border-radius:10px;
+	border-radius:10px;
+	box-shadow:0 0 15px 0 #ccc;
+	height:100px;
+	width:100px;
+}
