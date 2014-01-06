@@ -1,0 +1,114 @@
+---
+layout: inner
+title: fix-ie-css-limit
+headscripts: /pure-js/fix-ie-css-limit/fix-ie-css-limit-demo.js,/pure-js/fix-ie-css-limit/fix-ie-css-limit-standalone.min.js
+---
+
+<p>Here is a demo page using <a href="https://github.com/Amphiluke/pure-js/tree/master/src/fix-ie-css-limit"><strong>fix-ie-css-limit</strong></a>, a snippet which helps to fix the well-known problem in IE < 10, when a number of cascading style sheets per document exceeds 31.</p>
+
+<p>This document uses more than <strong>50</strong> external style sheets (use Firebug or Webkit developer tools to make sure of it). IE 6–9 support <strong>31</strong> style sheets as a maximum, but the snippet <strong>fix-ie-css-limit</strong> allows you to get over this restriction. The snippet is proven to work in IE 6 and higher. Note however that the current page uses the data:uri scheme to attach 50 additional stylesheets (I didn't want to heap up the server with fifty test CSS files), so please do not try to test this demo in IE 7 or older, as they do not support data:uri.</p>
+
+<!--[if gt IE 9]><!-->
+<p style="color:#dc143c;"><strong>Please use Internet Explorer 8 or 9 to test this page appropriately.</strong></p>
+<!--<![endif]-->
+
+<h2>Example: Color Table</h2>
+
+<p>
+	Each cell of the below table has its own CSS class, each declared in a separate style sheet.
+	<span id="enabled-fix-case">
+		The table wouldn't be fully colored if you <a href="./?disable-fix=1">turn off</a> the snippet <strong>fix-ie-css-limit</strong>.
+	</span>
+	<span id="disabed-fix-case">
+		The snippet <strong>fix-ie-css-limit</strong> is now disabled. So you can see, that some colors aren't displayed since the corresponding classes are declared in the style sheets being ignored by IE owing to their large number. You may now <a href="./">enable</a> the snippet to fix the problem.
+	</span>
+</p>
+<script>
+(function () {
+	"use strict";
+	var enabledSpan = document.getElementById("enabled-fix-case"),
+		disabledSpan = document.getElementById("disabed-fix-case"),
+		hidden = (location.search.indexOf("disable-fix=1") > -1) ? enabledSpan : disabledSpan;
+	hidden.style.display = "none";
+})();
+</script>
+
+<table cellpadding="5">
+	<tr>
+		<td class="AliceBlue">AliceBlue</td>
+		<td class="AntiqueWhite">AntiqueWhite</td>
+		<td class="Aqua">Aqua</td>
+		<td class="Aquamarine">Aquamarine</td>
+		<td class="Azure">Azure</td>
+	</tr>
+	<tr>
+		<td class="Beige">Beige</td>
+		<td class="Bisque">Bisque</td>
+		<td class="Black">Black</td>
+		<td class="BlanchedAlmond">BlanchedAlmond</td>
+		<td class="Blue">Blue</td>
+	</tr>
+	<tr>
+		<td class="BlueViolet">BlueViolet</td>
+		<td class="Brown">Brown</td>
+		<td class="BurlyWood">BurlyWood</td>
+		<td class="CadetBlue">CadetBlue</td>
+		<td class="Chartreuse">Chartreuse</td>
+	</tr>
+	<tr>
+		<td class="Chocolate">Chocolate</td>
+		<td class="Coral">Coral</td>
+		<td class="CornflowerBlue">CornflowerBlue</td>
+		<td class="Cornsilk">Cornsilk</td>
+		<td class="Crimson">Crimson</td>
+	</tr>
+	<tr>
+		<td class="Cyan">Cyan</td>
+		<td class="DarkBlue">DarkBlue</td>
+		<td class="DarkCyan">DarkCyan</td>
+		<td class="DarkGoldenrod">DarkGoldenrod</td>
+		<td class="DarkGray">DarkGray</td>
+	</tr>
+	<tr>
+		<td class="DarkGreen">DarkGreen</td>
+		<td class="DarkKhaki">DarkKhaki</td>
+		<td class="DarkMagenta">DarkMagenta</td>
+		<td class="DarkOliveGreen">DarkOliveGreen</td>
+		<td class="DarkOrange">DarkOrange</td>
+	</tr>
+	<tr>
+		<td class="DarkOrchid">DarkOrchid</td>
+		<td class="DarkRed">DarkRed</td>
+		<td class="DarkSalmon">DarkSalmon</td>
+		<td class="DarkSeaGreen">DarkSeaGreen</td>
+		<td class="DarkSlateBlue">DarkSlateBlue</td>
+	</tr>
+	<tr>
+		<td class="DarkSlateGray">DarkSlateGray</td>
+		<td class="DarkTurquoise">DarkTurquoise</td>
+		<td class="DarkViolet">DarkViolet</td>
+		<td class="DeepPink">DeepPink</td>
+		<td class="DeepSkyBlue">DeepSkyBlue</td>
+	</tr>
+	<tr>
+		<td class="DimGray">DimGray</td>
+		<td class="DodgerBlue">DodgerBlue</td>
+		<td class="FireBrick">FireBrick</td>
+		<td class="FloralWhite">FloralWhite</td>
+		<td class="ForestGreen">ForestGreen</td>
+	</tr>
+	<tr>
+		<td class="Fuchsia">Fuchsia</td>
+		<td class="Gainsboro">Gainsboro</td>
+		<td class="GhostWhite">GhostWhite</td>
+		<td class="Gold">Gold</td>
+		<td class="Goldenrod">Goldenrod</td>
+	</tr>
+</table>
+
+<h2>Links</h2>
+<p>There are two versions of fix-ie-css-limit: standalone and jQuery based.</p>
+<ul>
+	<li>Details &amp; API: <a href="https://github.com/Amphiluke/pure-js/tree/master/src/fix-ie-css-limit#fix-ie-css-limit">standalone version</a>, <a href="https://github.com/Amphiluke/jquery-plugins/tree/master/src/fix-ie-css-limit#fix-ie-css-limit">jQuery based version</a></li>
+	<li>Sources: <a href="https://github.com/Amphiluke/pure-js/tree/master/src/fix-ie-css-limit">standalone version</a>, <a href="https://github.com/Amphiluke/jquery-plugins/tree/master/src/fix-ie-css-limit">jQuery based version</a></li>
+</ul>
