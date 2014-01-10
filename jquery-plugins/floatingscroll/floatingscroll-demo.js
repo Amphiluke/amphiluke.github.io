@@ -32,7 +32,9 @@ maze = {
 		if (this.img.complete) {
 			this.ctx.drawImage(this.img, 0, 0);
 		} else {
-			this.img.onload = $.proxy(this.ctx.drawImage, this.ctx, this.img, 0, 0);
+			this.img.onload = $.proxy(function () {
+				this.ctx.drawImage(this.img, 0, 0);
+			}, this);
 		}
 	},
 
