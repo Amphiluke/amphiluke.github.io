@@ -1,3 +1,4 @@
 [Gg]emfile*
 .bundle/
 _site/
+node_modules/

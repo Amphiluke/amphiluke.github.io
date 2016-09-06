@@ -1,0 +1,133 @@
+@import (inline) "../node_modules/normalize.css/normalize.css";
+
+html,
+body {
+    background:#080808;
+}
+body {
+    box-sizing:border-box;
+    color:#ddd;
+    display:flex;
+    flex-direction:column;
+    font-family:Impact,Arial,sans-serif;
+    justify-content:space-between;
+    margin:0 auto;
+    max-width:2000px;
+    min-height:100vh;
+    padding:10px;
+}
+
+a {
+    color:#040;
+    transition:color 0.5s;
+    &:hover {
+        color:lighten(#040, 10%);
+    }
+}
+
+.page-header {
+    text-align:center;
+
+    h1 {
+        display:inline-block;
+        font-weight:normal;
+        margin:0;
+        padding-bottom:20px;
+        position:relative;
+
+        &:before {
+            background:#ddd;
+            bottom:0;
+            content:"";
+            height:1px;
+            left:0;
+            position:absolute;
+            width:100%;
+        }
+        &:after {
+            background:#ddd;
+            border:6px solid #080808;
+            border-radius:50%;
+            bottom:-9px;
+            content:"";
+            height:8px;
+            left:50%;
+            margin-left:-4px;
+            position:absolute;
+            width:8px;
+        }
+    }
+}
+
+.project-list {
+    align-items:flex-start;
+    display:inline-flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    list-style:none;
+    overflow:hidden;
+    padding:0;
+    text-align:center;
+    width:100%;
+
+    > li {
+        margin:20px;
+        vertical-align:top;
+
+        a {
+            background:#151515;
+            border-radius:50%;
+            box-shadow:0 0 10px 10px #252525;
+            display:block;
+            height:200px;
+            position:relative;
+            text-decoration:none;
+            transition:transform 0.3s linear 0.5s, color 0.5s;
+            width:200px;
+
+            h2,  p {
+                box-sizing:border-box;
+                display:flex;
+                flex-direction:column;
+                height:100%;
+                justify-content:center;
+                left:0;
+                padding:10px;
+                position:absolute;
+                top:0;
+                transition:opacity 0.3s ease 0.5s;
+                width:100%;
+            }
+
+            h2 {
+                font:normal 100px/1 Impact,Arial,sans-serif;
+                margin:0;
+                opacity:1;
+            }
+
+            p {
+                margin:0;
+                max-width:100%;
+                opacity:0;
+                transform:rotate(180deg);
+            }
+
+            &:hover {
+                transform:rotate(180deg);
+
+                h2 {
+                    opacity:0;
+                }
+
+                p {
+                    opacity:1;
+                }
+            }
+        }
+    }
+}
+
+.page-footer {
+    font-size:0.8em;
+    text-align:right;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "amphiluke.github.io",
+  "version": "1.0.0",
+  "description": "Live demos for JavaScript modules and jQuery plugins by Amphiluke",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amphiluke/amphiluke.github.io.git"
+  },
+  "author": "Amphiluke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Amphiluke/amphiluke.github.io/issues"
+  },
+  "homepage": "https://github.com/Amphiluke/amphiluke.github.io#readme",
+  "devDependencies": {
+    "less": "^2.7.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "normalize.css": "^4.2.0"
+  }
+}
