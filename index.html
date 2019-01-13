@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <script>if (!window.fetch) location.replace("https://github.com/Amphiluke?tab=repositories");</script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Live demos for JavaScript modules and jQuery plugins">
     <title>Projects by Amphiluke</title>
+    <link rel="icon" type="image/png" href="favicon.png"/>
     <link rel="stylesheet" href="styles/front-page.css">
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="styles/front-page-ie.css">
-    <![endif]-->
+    <meta property="og:url" content="https://amphiluke.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projects by Amphiluke">
+    <meta property="og:description" content="Live demos for JavaScript modules and jQuery plugins">
+    <meta property="og:image" content="https://amphiluke.github.io/images/preview.jpg">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="524">
 </head>
 <body>
     <header class="page-header">
@@ -17,71 +23,13 @@
         <p>Live demos for JavaScript modules and jQuery plugins</p>
     </header>
     <main class="page-main">
-        <ul class="project-list">
-            <li>
-                <a href="/floating-scroll/">
-                    <h2>FS</h2>
-                    <p>floatingScroll — a lightweight jQuery plugin providing floating scrollbar functionality</p>
-                </a>
-            </li>
-            <li>
-                <a href="/l-systems/">
-                    <h2>LS</h2>
-                    <p>L-systems — a simple canvas-based L-system plotter and manager</p>
-                </a>
-            </li>
-            <li>
-                <a href="/open-evolver/">
-                    <h2>OE</h2>
-                    <p>Open evolver — model stochastic femtosecond nonequilibrium nanodynamics at the nanoscale</p>
-                </a>
-            </li>
-            <li>
-                <a href="/nanothrower/">
-                    <h2>NT</h2>
-                    <p>Nanothrower — model hydrogen adsorption on the surface of nanostructures</p>
-                </a>
-            </li>
-            <li>
-                <a href="/jquery-plugins/overplaceholder/">
-                    <h2>OP</h2>
-                    <p>overplaceholder — a jQuery plugin providing placeholder functionality &amp; some extras</p>
-                </a>
-            </li>
-            <li>
-                <a href="/pure-js/slica/slica.html">
-                    <h2>SL</h2>
-                    <p>SLICA — a tool to measure contact angles on solid-liquid interfaces</p>
-                </a>
-            </li>
-            <li>
-                <a href="/jquery-plugins/spin-digits/">
-                    <h2>SD</h2>
-                    <p>spin-digits — jQuery plugin animating dynamic changes of numeric data on the web-page</p>
-                </a>
-            </li>
-            <li>
-                <a href="/jquery-plugins/extratabs/">
-                    <h2>ET</h2>
-                    <p>extratabs — an extended “tabs” widget for the jQuery&nbsp;UI framework</p>
-                </a>
-            </li>
-            <li>
-                <a href="/pure-js/fix-ie-css-limit/">
-                    <h2>FL</h2>
-                    <p>fix-ie-css-limit — fix old IE limitation on a number of CSS files</p>
-                </a>
-            </li>
-            <li>
-                <a href="/pure-js/fx-pie-charts/">
-                    <h2>PC</h2>
-                    <p>fx-pie-charts — a small JavaScript module for pie charts plotting</p>
-                </a>
-            </li>
-        </ul>
+        <p class="message fetch-message">Fetching the project list…</p>
+        <p class="message error-message hidden">Sorry, something went wrong! Project list fetch failed. <br>If you are looking for a complete list of Amphiluke’s projects, please visit <a href="https://github.com/Amphiluke?tab=repositories" rel="noopener">this page</a> on GitHub.</p>
+        <ul class="project-list"></ul>
     </main>
     <footer class="page-footer">
-        © <a href="https://github.com/Amphiluke">Amphiluke</a>, 2014–2017
+        © <a href="https://github.com/Amphiluke">Amphiluke</a>, 2014–2019
     </footer>
+    <script src="scripts/projects.js"></script>
 </body>
 </html>
