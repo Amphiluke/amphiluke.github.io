@@ -1,11 +1,13 @@
 @import (inline) "../node_modules/normalize.css/normalize.css";
 
 @base-font: "Trebuchet MS",Tahoma,Arial,sans-serif;
+@bg-color: #010;
 @text-color: #ddd;
+@link-color: #070;
 
 html,
 body {
-    background:#080808;
+    background:@bg-color;
 }
 body {
     box-sizing:border-box;
@@ -13,7 +15,6 @@ body {
     display:flex;
     flex-direction:column;
     font-family:@base-font;
-    justify-content:space-between;
     margin:0 auto;
     max-width:2000px;
     min-height:100vh;
@@ -21,10 +22,10 @@ body {
 }
 
 a {
-    color:#070;
+    color:@link-color;
     transition:color 0.5s;
     &:hover {
-        color:lighten(#070, 10%);
+        color:lighten(@link-color, 10%);
     }
 }
 
@@ -32,8 +33,19 @@ a {
     display:none !important;
 }
 
+.page-header,
+.page-footer {
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+    justify-content:flex-end;
+}
+.page-main {
+    flex-shrink:0;
+}
+
 .page-header {
-    text-align:center;
+    align-items:center;
 
     h1 {
         display:inline-block;
@@ -42,7 +54,7 @@ a {
         position:relative;
 
         &:before {
-            background:linear-gradient(90deg, transparent, @text-color 50%, transparent);
+            background:linear-gradient(90deg, fade(@bg-color, 0), @text-color 50%, fade(@bg-color, 0));
             bottom:0;
             content:"";
             height:2px;
@@ -51,8 +63,8 @@ a {
             width:100%;
         }
         &:after {
-            background:@text-color;
-            border:6px solid #080808;
+            background:lighten(@link-color, 10%);
+            border:6px solid @bg-color;
             border-radius:50%;
             bottom:-9px;
             content:"";
@@ -67,6 +79,7 @@ a {
 
 .message {
     font:normal 1.2em / 1.7 Arial,sans-serif;
+    padding:20px 0;
     text-align:center;
 }
 @keyframes spin {
@@ -117,9 +130,7 @@ a {
     }
 
     a {
-        background:#151515;
-        border-radius:50%;
-        box-shadow:0 0 10px 10px #252525;
+        background:radial-gradient(circle at center, #040, #040 15%, fade(#040, 0) 65%);
         display:block;
         height:200px;
         position:relative;
@@ -156,13 +167,20 @@ a {
     h2 {
         font:normal 100px/1 Impact,AvenirNextCondensed-Heavy,HelveticaNeue-CondensedBlack,sans-serif-condensed,sans-serif;
         margin:0;
+        text-shadow:0 0 10px fade(#000, 50%);
         opacity:1;
     }
     p {
         margin:0;
         max-width:100%;
         opacity:0;
+        text-shadow:0 0 4px #000;
         transform:rotate(180deg);
+        em {
+            display:contents;
+            font-size:1.25em;
+            font-style:normal;
+        }
     }
     .project-name {
         text-decoration:underline;
@@ -173,4 +191,7 @@ a {
     color:fade(@text-color, 60%);
     font-size:0.8em;
     text-align:right;
+    p {
+        margin:0;
+    }
 }
