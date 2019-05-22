@@ -40,4 +40,17 @@
             document.querySelector(".fetch-message").classList.add("hidden");
             document.querySelector(".error-message").classList.remove("hidden");
         });
+
+    if (!matchMedia("(hover)").matches) {
+        let projectList = document.querySelector(".project-list");
+        projectList.addEventListener("click", e => {
+            [...projectList.querySelectorAll(".selected")]
+                .filter(node => !node.contains(e.target))
+                .forEach(node => node.classList.remove("selected"));
+            if (e.target.nodeName.toLowerCase() === "h2") {
+                e.preventDefault();
+                e.target.parentNode.classList.add("selected");
+            }
+        });
+    }
 }

@@ -24,7 +24,8 @@ body {
 a {
     color:@link-color;
     transition:color 0.5s;
-    &:hover {
+    &:hover,
+    &.selected {
         color:lighten(@link-color, 10%);
     }
 }
@@ -138,7 +139,8 @@ a {
         transition:transform 0.3s linear 0.5s, color 0.5s;
         width:200px;
 
-        &:hover {
+        &:hover,
+        &.selected {
             transform:rotate(180deg);
 
             h2 {
@@ -147,6 +149,10 @@ a {
             p {
                 opacity:1;
             }
+        }
+        &:not(:hover) h2,
+        &:not(.selected) h2 {
+            z-index:1;
         }
     }
 
@@ -180,6 +186,12 @@ a {
             display:contents;
             font-size:1.25em;
             font-style:normal;
+        }
+        &:after {
+            color:darkgoldenrod;
+            content:"Open »";
+            position:relative;
+            top:0.5em;
         }
     }
     .project-name {
