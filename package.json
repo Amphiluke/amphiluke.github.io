@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/Amphiluke/amphiluke.github.io#readme",
   "devDependencies": {
-    "less": "^2.7.1",
+    "less": "^3.9.0",
     "less-plugin-clean-css": "^1.5.1",
-    "normalize.css": "^4.2.0"
+    "normalize.css": "^8.0.1"
   }
 }
