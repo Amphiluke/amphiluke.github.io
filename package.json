@@ -18,7 +18,7 @@
   "homepage": "https://github.com/Amphiluke/amphiluke.github.io#readme",
   "devDependencies": {
     "clean-css-cli": "^4.3.0",
-    "less": "^3.10.3",
+    "less": "^3.11.1",
     "normalize.css": "^8.0.1"
   }
 }
