@@ -3,6 +3,7 @@
     let sanitize = str => str.replace(/[&<>]/g, char => entityMap[char] || char);
 
     let shortNameMap = {
+        lindsvg: "ls",
         potprox: "pp",
         nanothrower: "nt",
         "learn-quantum-mechanics": "qm"
@@ -19,7 +20,7 @@
 
     fetch("https://api.github.com/users/Amphiluke/repos?sort=created")
         .then(response => response.json())
-        .then(repos => repos.filter(repo => !!repo.homepage))
+        .then(repos => repos.filter(({homepage, archived}) => !!homepage && !archived))
         .then(repos => {
             if (!repos.length) {
                 return Promise.reject();
