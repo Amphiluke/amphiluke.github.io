@@ -12,8 +12,7 @@
         fullName.replace(/^(.)[^\W_]*[\W_](\w).*/, "$1$2").slice(0, 2);
 
     let makeTitle = fullName => sanitize(shortenName(fullName).toUpperCase());
-    let {CSS = {}} = window;
-    let makeName = CSS.supports && CSS.supports("display", "contents") ?
+    let makeName = window.CSS.supports("display", "contents") ?
         fullName => `<em>${sanitize(fullName)}</em>` :
         fullName => sanitize(fullName);
     let makeDescription = description => sanitize(description);
