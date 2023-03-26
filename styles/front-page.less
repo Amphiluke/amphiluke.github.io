@@ -8,7 +8,7 @@
 @link-color: #070;
 
 html {
-    background: @bg-color url(../images/front-bg.png) 50% 50% no-repeat;
+    background: @bg-color;
 }
 
 body {
@@ -36,47 +36,6 @@ a {
 
 .hidden {
     display: none !important;
-}
-
-.page-header,
-.page-footer {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    justify-content: flex-end;
-}
-
-.page-main {
-    flex-shrink: 0;
-}
-
-.page-header {
-    align-items: center;
-
-    h1 {
-        display: inline-block;
-        margin: 0;
-
-        &::after {
-            align-items: center;
-            background: linear-gradient(
-                90deg,
-                fade(@text-color, 0),
-                @text-color calc(50% - 16px),
-                transparent 0,
-                transparent calc(50% + 16px),
-                @text-color 0,
-                fade(@text-color, 0)
-            ) 50% 50% / 100% 2px no-repeat;
-            content: "\1f312";
-            display: flex;
-            font-size: 16px;
-            height: 16px;
-            justify-content: center;
-            line-height: 0;
-            margin-top: 10px;
-        }
-    }
 }
 
 .message {
@@ -117,103 +76,45 @@ a {
     width: 45px;
 }
 
+.page-main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    place-content: center;
+}
+
 .project-list {
-    align-items: flex-start;
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    --shield-size: ~"min(520px, 100vw - 3 * 3rem)";
+    background: url(../images/shield.svg) 50% 50% no-repeat;
+    background-size: calc(var(--shield-size) * 0.85);
+    display: grid;
+    height: var(--shield-size);
     list-style: none;
-    overflow: hidden;
-    padding: 0;
-    text-align: center;
-    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    place-content: center;
+    width: var(--shield-size);
 
     > li {
-        margin: 20px;
-        vertical-align: top;
+        grid-area: 1 / 1;
+        transform: rotateZ(var(--azimuth, 0deg)) translateY(calc(var(--shield-size) / -2));
     }
 
     a {
-        display: block;
-        filter: drop-shadow(0px 0px 20px @link-color);
-        height: 200px;
-        position: relative;
+        font: normal 3rem / 1 Impact, AvenirNextCondensed-Heavy, HelveticaNeue-CondensedBlack, "Ubuntu Condensed", sans-serif-condensed, sans-serif;
         text-decoration: none;
-        transition: transform 0.3s linear 0.5s, color 0.5s;
-        width: 200px;
 
-        &:hover,
-        &.selected {
-            transform: rotate(180deg);
-
-            h2 {
-                opacity: 0;
-            }
-
-            p {
-                opacity: 1;
-            }
+        @media (max-width: 512px) {
+            font-size: 2rem;
         }
-
-        &:not(:hover) h2,
-        &:not(.selected) h2 {
-            z-index: 1;
-        }
-    }
-
-    h2,
-    p {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        justify-content: center;
-        left: 0;
-        padding: 10px;
-        position: absolute;
-        top: 0;
-        transition: opacity 0.3s ease 0.5s;
-        width: 100%;
-    }
-
-    h2 {
-        font: normal 100px/1 Impact, AvenirNextCondensed-Heavy, HelveticaNeue-CondensedBlack, "Ubuntu Condensed", sans-serif-condensed, sans-serif;
-        margin: 0;
-        text-shadow: 0 0 10px fade(#000, 50%);
-        opacity: 1;
-    }
-
-    p {
-        margin: 0;
-        max-width: 100%;
-        opacity: 0;
-        text-shadow: 0 0 4px #000;
-        transform: rotate(180deg);
-
-        em {
-            display: contents;
-            font-size: 1.25em;
-            font-style: normal;
-        }
-
-        &::after {
-            color: darkgoldenrod;
-            content: "Open »";
-            position: relative;
-            top: 0.5em;
-        }
-    }
-
-    .project-name {
-        text-decoration: underline;
     }
 }
 
 .page-footer {
     color: fade(@text-color, 60%);
+    flex-shrink: 0;
     font-size: 0.8em;
-    text-align: right;
+    text-align: end;
 
     p {
         margin: 0;

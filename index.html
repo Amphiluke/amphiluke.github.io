@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <script>if (!window.fetch) location.replace("https://github.com/Amphiluke?tab=repositories");</script>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Live demos for JavaScript modules and web apps">
     <title>Projects by Amphiluke</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles/front-page.css?v6">
+    <link rel="stylesheet" href="styles/front-page.css?v7">
+    <link rel="modulepreload" href="https://cdn.skypack.dev/@octokit/request">
     <link rel="preconnect" href="https://api.github.com" crossorigin>
     <meta property="og:url" content="https://amphiluke.github.io">
     <meta property="og:type" content="website">
@@ -19,18 +18,14 @@
     <meta property="og:image:height" content="600">
 </head>
 <body>
-    <header class="page-header">
-        <h1>Projects by Amphiluke</h1>
-        <p>Live demos for JavaScript modules and web apps</p>
-    </header>
     <main class="page-main">
         <p class="message fetch-message">Fetching the project list…</p>
         <p class="message error-message hidden">Sorry, something went wrong! Project list fetch failed. <br>If you are looking for a complete list of Amphiluke’s projects, please visit <a href="https://github.com/Amphiluke?tab=repositories" rel="noopener">this page</a> on GitHub.</p>
-        <ul class="project-list"></ul>
+        <ul class="project-list hidden"></ul>
     </main>
     <footer class="page-footer">
-        <p>© <a href="https://github.com/Amphiluke">Amphiluke</a>, 2014–2022</p>
+        <p>© <a href="https://github.com/Amphiluke">Amphiluke</a>, 2014–2023</p>
     </footer>
-    <script src="scripts/projects.js?v6"></script>
+    <script type="module" src="scripts/projects.mjs?v7"></script>
 </body>
 </html>
