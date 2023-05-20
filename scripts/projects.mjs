@@ -4,6 +4,7 @@ let entityMap = {"&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;"};
 let sanitize = str => str.replace(/[&<>"]/g, char => entityMap[char] || char);
 
 let shortNameMap = {
+    "1f483": "dm",
     lindsvg: "ls",
     potprox: "pp",
     nanothrower: "nt",
