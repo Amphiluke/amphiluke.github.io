@@ -16,7 +16,7 @@ let shortenName = fullName => shortNameMap[fullName] ||
 let makeTitle = fullName => sanitize(shortenName(fullName).toUpperCase());
 
 request("GET /users/{username}/repos?sort=created", {username: "Amphiluke"})
-    .then(({data: repos}) => repos.filter(({homepage, archived}) => !!homepage && !archived))
+    .then(({data: repos}) => repos.filter(({homepage, archived}) => homepage?.startsWith(location.origin) && !archived))
     .then(repos => {
         let reposCount = repos.length;
         if (!reposCount) {
