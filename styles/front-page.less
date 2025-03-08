@@ -8,7 +8,9 @@
 @link-color: #070;
 
 html {
-    background: @bg-color;
+    background: radial-gradient(circle at center, fade(#040, 50%) 0, fade(@bg-color, 75%) 400px, fade(@bg-color, 0%) 600px),
+        url(../images/ornament.svg) 50% 50% repeat,
+        linear-gradient(0deg, @bg-color, @bg-color);
 }
 
 body {
@@ -81,7 +83,6 @@ a {
 }
 
 .page-main {
-    background: radial-gradient(circle at center, fade(#070, 50%) 0, fade(#070, 0%) min(300px, 40vw));
     display: flex;
     flex-direction: column;
     flex-grow: 1;
