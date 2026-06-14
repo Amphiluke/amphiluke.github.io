@@ -494,7 +494,10 @@ hr {
   background: var(--color-surface);
   border: 1px solid var(--color-on-surface-mid);
   box-shadow: 1px 1px 3px 0 var(--color-surface-shadow);
-  inset: calc(var(--v29f6233e) * 1px) calc(var(--v3d63dc28) * 1px) auto auto;
+  /* inset: calc(var(--v29f6233e) * 1px) calc(var(--v3d63dc28) * 1px) auto auto; */
+  --v29f6233e111: 54;
+  --v3d63dc28111: 75;
+  inset: calc(var(--v29f6233e111) * 1px) calc(var(--v3d63dc28111) * 1px) auto auto;
   padding: 0
 }
 
@@ -935,6 +938,14 @@ hr {
   top: 0;
 }
 
+
+._sidebar_1bf5g_2::after {
+  content: "\A0";
+}
+._sidebar_1bf5g_2:has(._panel_1rv8o_1:not(._collapsed_1bf5g_48))::after {
+  content: none;
+}
+
 ._menuBtn_1bf5g_13 {
   position: absolute;
   inset: 24px 10px auto auto
@@ -973,7 +984,8 @@ hr {
 }
 
 ._collapsed_1bf5g_48 {
-  display: none;
+  visibility: hidden;
+  position: absolute;
 }
 
 ._leafToolbar_dy1b5_2 {
