@@ -548,7 +548,9 @@ hr {
 
 ._title_1rv8o_11::after {
   display: block;
-  content: "::" var(--v29f6233e) "::" var(--v3d63dc28);
+  /* counter-reset: my-numeric-counter var(--v29f6233e); */
+  counter-reset: my-numeric-counter var(--v3d63dc28);
+  content: counter(my-numeric-counter);
 }
 
 ._body_1rv8o_15 {
