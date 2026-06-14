@@ -973,10 +973,7 @@ hr {
 }
 
 ._collapsed_1bf5g_48 {
-  visibility: hidden;
-  padding: 0;
-  position: absolute;
-  width: 0;
+  display: none;
 }
 
 ._leafToolbar_dy1b5_2 {
