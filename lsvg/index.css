@@ -494,10 +494,7 @@ hr {
   background: var(--color-surface);
   border: 1px solid var(--color-on-surface-mid);
   box-shadow: 1px 1px 3px 0 var(--color-surface-shadow);
-  /* inset: calc(var(--v29f6233e) * 1px) calc(var(--v3d63dc28) * 1px) auto auto; */
-  --v29f6233e111: 54;
-  --v3d63dc28111: 75;
-  inset: calc(var(--v29f6233e111) * 1px) calc(var(--v3d63dc28111) * 1px) auto auto;
+  inset: calc(var(--v29f6233e) * 1px) calc(var(--v3d63dc28) * 1px) auto auto;
   padding: 0
 }
 
@@ -516,6 +513,7 @@ hr {
   background: 0 0;
   border: none;
   border-radius: 0;
+  color: inherit;
   width: 100%;
   padding: .4em .6em;
   display: block
@@ -546,6 +544,11 @@ hr {
 
 ._title_1rv8o_11 {
   flex-shrink: 0
+}
+
+._title_1rv8o_11::after {
+  display: block;
+  content: "::" var(--v29f6233e) "::" var(--v3d63dc28);
 }
 
 ._body_1rv8o_15 {
