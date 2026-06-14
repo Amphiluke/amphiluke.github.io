@@ -932,7 +932,8 @@ hr {
   min-width: var(--size-sidebar-button);
   inset-inline-start: 0;
   position: fixed;
-  top: 0
+  top: 0;
+  will-change: width;
 }
 
 ._menuBtn_1bf5g_13 {
@@ -975,7 +976,6 @@ hr {
 ._collapsed_1bf5g_48 {
   visibility: hidden;
   position: absolute;
-  left: -110vw;
 }
 
 ._leafToolbar_dy1b5_2 {
