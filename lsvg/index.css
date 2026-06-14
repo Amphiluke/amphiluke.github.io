@@ -539,7 +539,6 @@ hr {
   margin-inline-start: var(--size-sidebar-button);
   padding: 0 10px 10px;
   display: flex;
-  will-change: position;
 }
 
 ._title_1rv8o_11 {
@@ -975,7 +974,8 @@ hr {
 
 ._collapsed_1bf5g_48 {
   visibility: hidden;
-  position: absolute
+  position: absolute;
+  left: -110vw;
 }
 
 ._leafToolbar_dy1b5_2 {
