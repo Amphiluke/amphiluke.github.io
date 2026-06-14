@@ -933,7 +933,6 @@ hr {
   inset-inline-start: 0;
   position: fixed;
   top: 0;
-  will-change: width;
 }
 
 ._menuBtn_1bf5g_13 {
@@ -975,7 +974,9 @@ hr {
 
 ._collapsed_1bf5g_48 {
   visibility: hidden;
+  padding: 0;
   position: absolute;
+  width: 0;
 }
 
 ._leafToolbar_dy1b5_2 {
